@@ -7,9 +7,6 @@ args <- vector()
 args[1] <- "file1.xlsx"
 args[2] <-"file2.xlsx"
 
-args[1] <- "calculations_data_10_20/SAE_PORTFOLIOS_BL_HIST20.xlsx"
-args[2] <-"calculations_data_10_20/SAE_PORTFOLIOS_BL_HIST22.xlsx"
-
 data1 <-data.frame(read_excel(args[1]))
 setDT(data1)
 setkeyv(data1, c("END_DATE", "PORTFOLIO"))
@@ -20,7 +17,6 @@ setkeyv(data2, c("END_DATE", "PORTFOLIO"))
 
 print("File1 and file2 have the same number of rows")
 all.equal(nrow(data1), nrow(data2))
-
 
 print("File1 and file2 has the same columns: ")
 all.equal(names(data1), names(data1))
